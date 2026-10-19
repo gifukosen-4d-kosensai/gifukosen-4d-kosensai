@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="上空カメラとAIで複数の車を目的地へ導く、AI交通システムを紹介します。">
+    <title>AI TRAFFIC | 4D RESEARCH PROJECT</title>
+    <link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+<nav class="site-nav" aria-label="メインナビゲーション"><div class="site-nav__inner">
+    <a class="nav-link" href="./index.html"><span class="en">TOP</span><span class="ja">トップ</span></a>
+    <a class="nav-link" href="./department.html"><span class="en">DEPARTMENT</span><span class="ja">学科紹介</span></a>
+    <a class="nav-link" href="./presentations.html" aria-current="page"><span class="en">PRESENTATION</span><span class="ja">発表内容</span></a>
+    <a class="nav-link" href="https://gifukosen-4d-kosensai.github.io/reservation/"><span class="en">RESERVATION</span><span class="ja">発表を予約</span></a>
+</div></nav>
+<header class="detail-hero"><div class="inner">
+    <span class="en">AI TRAFFIC</span>
+    <h1>AI交通システムとは？</h1>
+    <p>上空カメラと交通シミュレータを活用し、道路全体を見ながら複数の車を目的地へ導く仕組みです。</p>
+</div></header>
+<main id="main" class="page-shell">
+    <section class="section section--redline"><div class="inner">
+        <div class="section-title"><span class="en">交通社会が抱える課題</span></div>
+        <p class="section-lead">身近な道路では、渋滞による移動時間やエネルギー消費の増加、交差点での事故などが課題になっています。</p>
+        <figure class="ai-traffic-figure">
+            <img src="./assets/img/AIkoutuu.png" alt="交差点を走る複数の車と、道路全体を把握する仕組みのイメージ">
+            <figcaption>道路全体の状況を把握し、複数の車の走行を考えるイメージ</figcaption>
+        </figure>
+        <div class="info-columns">
+            <div>
+                <h2>渋滞は、移動時間とエネルギーを増やす</h2>
+                <p>通勤・通学の時間帯などに渋滞が起きると、目的地までの移動時間が長くなります。車が停止と発進を繰り返すことも、エネルギー消費が増える一因です。</p>
+                <h2>車載センサだけでは見えにくい状況も</h2>
+                <p>見通しの悪い交差点や交通量の多い道路では、車同士が接近して衝突する危険があります。車に搭載されたセンサだけでは、建物の陰にいる車や離れた場所の車の動きを把握しにくい場合があります。</p>
+            </div>
+            <dl class="meta-list">
+                <div><dt>課題 01</dt><dd>渋滞で移動時間が延び、停止・発進によってエネルギー消費も増加。</dd></div>
+                <div><dt>課題 02</dt><dd>死角や遠方の車両は、各車のセンサだけでは把握が難しいことがあります。</dd></div>
+                <div><dt>必要なこと</dt><dd>個々の車だけでなく、道路全体の交通状況を把握すること。</dd></div>
+            </dl>
+        </div>
+    </div></section>
+    <section class="section section--dark section--redline"><div class="inner">
+        <div class="section-title"><span class="en">AI交通システムの仕組み</span></div>
+        <p class="section-lead">上空カメラで取得した車両の位置情報を交通シミュレータ「SUMO」に反映し、その時点の交通状況に応じて経路を計算します。</p>
+        <div class="info-columns">
+            <div>
+                <h2>上空から道路全体を捉える</h2>
+                <p>人工衛星に見立てたカメラで道路を撮影し、映像から各車両の位置情報をリアルタイムに取得します。離れた場所にいる車も含めて、道路全体の状況を把握することを目指します。</p>
+            </div>
+            <div>
+                <h2>SUMOで経路を動的に計算</h2>
+                <p>取得した位置情報を交通シミュレータ「SUMO」に反映し、現在の交通状況に応じた経路を動的に計算します。渋滞や衝突を避けながら、複数台の車を目的地まで走行させるシステムの製作に取り組んでいます。</p>
+            </div>
+        </div>
+        <dl class="meta-list">
+            <div><dt>01 観測</dt><dd>上空カメラの映像から、各車両の位置をリアルタイムに取得。</dd></div>
+            <div><dt>02 シミュレーション</dt><dd>位置情報をSUMOに反映し、現在の交通状況を再現。</dd></div>
+            <div><dt>03 経路計算</dt><dd>道路全体を見ながら、各車両が目的地へ向かう経路を動的に計算。</dd></div>
+        </dl>
+        <p class="section-lead">渋滞や衝突を回避しながら目的地を目指す、未来の交通システムをぜひ展示でご覧ください。</p>
+        <div class="cta-row">
+            <a class="btn btn--ghost" href="./presentations.html">発表一覧へ戻る</a>
+            <a class="btn" href="https://gifukosen-4d-kosensai.github.io/reservation/">発表を予約</a>
+        </div>
+    </div></section>
+</main>
+<footer class="site-footer"><div class="inner"><strong>4D RESEARCH PROJECT</strong><br>© <span data-current-year></span> Gifu Kosen 4D.</div></footer>
+<script src="./assets/js/site.js" defer></script>
+</body>
+</html>
