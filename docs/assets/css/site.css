@@ -47,12 +47,13 @@ button, input, select, textarea { font: inherit; }
 /*
   Main HERO
   画像自体にタイトル「DENSHI」が入っているため、文字は重ねずビジュアルをそのまま見せます。
-  横長画面では上端を固定して下側のみトリミング。スマホでは元画像の比率で全体表示します。
+  PC・スマートフォンとも画像全体が見えるよう、元画像の比率を維持します。
 */
 .hero {
   position: relative;
   width: 100%;
-  height: min(92svh, 74.66vw);
+  height: auto;
+  aspect-ratio: 2392 / 1760;
   min-height: 0;
   overflow: hidden;
   background: #8fc3e5;
