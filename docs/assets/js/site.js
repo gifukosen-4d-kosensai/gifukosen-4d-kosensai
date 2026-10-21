@@ -1,7 +1,7 @@
 /**
  * Main site shared script.
  * - Fills the current year in the footer.
- * - Tracks page views and displays the site's total view count with GoatCounter.
+ * - Tracks and displays the TOP page view count with GoatCounter.
  */
 document.querySelectorAll('[data-current-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
@@ -15,7 +15,15 @@ if (siteViews) {
   counterScript.async = true;
   counterScript.dataset.goatcounter = 'https://4ddenshi.goatcounter.com/count';
   counterScript.addEventListener('load', () => {
-    fetch('https://4ddenshi.goatcounter.com/counter/TOTAL.json')
+    if (!window.goatcounter || typeof window.goatcounter.get_data !== 'function') {
+      siteViews.textContent = '取得できません';
+      console.error('GoatCounter loaded without its page data.');
+      return;
+    }
+
+    const pagePath = window.goatcounter.get_data()['p'];
+
+    fetch(`https://4ddenshi.goatcounter.com/counter/${encodeURIComponent(pagePath)}.json`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`GoatCounter returned HTTP ${response.status}.`);
