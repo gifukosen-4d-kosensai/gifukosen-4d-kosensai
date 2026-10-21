@@ -44,6 +44,6 @@ python -m http.server 5500
 
 ## 閲覧カウンター
 
-全ページのフッターに、GoatCounter の無料カウンターで集計したサイト全体の閲覧数を表示します。サイトコードは `4ddenshi` です。
+TOPページだけを GoatCounter の無料カウンターで計測し、TOPページのフッターに閲覧数を表示します。ほかのページの閲覧はこのカウントに含まれません。サイトコードは `4ddenshi` です。
 
 初回利用時は GoatCounter の管理画面で **Settings → Site settings → Allow adding visitor counts on your website** を有効にしてください。許可が無効の間はカウンターを表示できません。表示数はサービス側で最大4時間キャッシュされるため、閲覧直後に更新されない場合があります。
