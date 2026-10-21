@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="岐阜高専 4D 専門展">
   <title>GIFUKOSEN 4D SENMONTEN PROJECT | 専門展発表</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
   <link rel="stylesheet" href="./assets/css/site.css">
 </head>
 <body>
 <a class="skip-link" href="#main">本文へ移動</a>
-
 <!--
   ★メインHERO画像
   差し替える場合は docs/assets/img/hero-denshi.png を置き換えてください。
@@ -21,11 +23,12 @@
     <img
       class="hero__image"
       src="./assets/img/hero-denshi.png"
-      width="2048"
-      height="1529"
+      width="2392"
+      height="1760"
       alt="砂丘の写真を背景に、赤い文字で『電子制御工学科 専門展 DENSHI』と書かれたメインビジュアル"
       fetchpriority="high"
       decoding="async"
+      loading="eager"
     >
   </picture>
 </header>
@@ -36,7 +39,8 @@
     <a class="nav-link" href="./index.html" aria-current="page"><span class="en">TOP</span><span class="ja">トップ</span></a>
     <a class="nav-link" href="./department.html"><span class="en">DEPARTMENT</span><span class="ja">学科紹介</span></a>
     <a class="nav-link" href="./presentations.html"><span class="en">PRESENTATION</span><span class="ja">発表内容</span></a>
-    <a class="nav-link" href="https://gifukosen-4d-kosensai.github.io/reservation/"><span class="en">RESERVATION</span><span class="ja">発表を予約</span></a>
+    <a class="nav-link" href="./reservation.html"><span class="en">RESERVATION</span><span class="ja">発表を予約</span></a>
+
   </div>
 </nav>
 
@@ -48,7 +52,7 @@
       <div class="feature-grid">
         <article class="feature-card">
           <div class="feature-card__visual feature-card__visual--department" data-label="DEPARTMENT">
-            <img class="feature-card__image" src="./assets/img/gakkasyoukai2.jpg" alt="学科紹介の写真">
+            <img class="feature-card__image" src="./assets/img/gakkasyoukai2.jpg" alt="学科紹介の写真" loading="lazy" decoding="async">
           </div>
           <div class="feature-card__body">
             <h3>学科紹介</h3>
@@ -58,7 +62,7 @@
         </article>
         <article class="feature-card">
           <div class="feature-card__visual" data-label="PRESENTATION">
-            <img class="feature-card__image" src="./assets/img/future_mobility.jpg" alt="専門展発表の写真">
+            <img class="feature-card__image" src="./assets/img/future_mobility.jpg" alt="専門展発表の写真" loading="lazy" decoding="async">
           </div>
           <div class="feature-card__body">
             <h3>専門展発表内容紹介</h3>
@@ -70,8 +74,8 @@
           <div class="feature-card__visual" data-label="RESERVATION"></div>
           <div class="feature-card__body">
             <h3>予約システム</h3>
-            <p>発表日時と人数を選択し、メールアドレスとあいことばを入力して予約します。残席もリアルタイム表示します。</p>
-            <div class="cta-row"><a class="btn" href="https://gifukosen-4d-kosensai.github.io/reservation/">予約ページへ</a></div>
+            <p>発表日時や人数を選ぶ予約画面のイメージです。実際の予約・残席管理はできません。</p>
+            <div class="cta-row"><a class="btn" href="./reservation.html">予約ページへ</a></div>
           </div>
         </article>
       </div>
@@ -85,7 +89,7 @@
       <div>
         <div class="section-title" style="text-align:left"><span class="en">RESERVATION</span><span class="ja">予約</span></div>
         <p></p>
-        <div class="cta-row" style="justify-content:flex-start"><a class="btn" href="https://gifukosen-4d-kosensai.github.io/reservation/">残席を確認</a></div>
+        <div class="cta-row" style="justify-content:flex-start"><a class="btn" href="./reservation.html">残席を確認</a></div>
       </div>
       <dl class="meta-list">
         <div><dt>DATE</dt><dd>10/31 & 11/01</dd></div>
