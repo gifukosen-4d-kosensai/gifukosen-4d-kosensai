@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="岐阜高専 4D専門展の予約画面イメージ">
+  <title>RESERVATION | 4D RESEARCH PROJECT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="./assets/css/site.css">
+  <link rel="stylesheet" href="./assets/css/reservation.css">
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+
+<header class="reservation-hero">
+  <div class="reservation-hero__inner">
+    <span class="reservation-eyebrow">4D KOSENSAI SENMONTEN · BOOKING SYSTEM</span>
+    <h1><span>RES</span>ERVATION</h1>
+    <p>専門展発表 予約受付</p>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="site-nav__inner">
+    <a class="nav-link" href="./index.html"><span class="en">TOP</span><span class="ja">メインサイト</span></a>
+    <a class="nav-link" href="./department.html"><span class="en">DEPARTMENT</span><span class="ja">学科紹介</span></a>
+    <a class="nav-link" href="./presentations.html"><span class="en">PRESENTATION</span><span class="ja">発表内容</span></a>
+    <a class="nav-link" href="./reservation.html" aria-current="page"><span class="en">RESERVATION</span><span class="ja">予約</span></a>
+  </div>
+</nav>
+
+<main id="main" class="page-shell reservation-page">
+  <div class="reservation-layout">
+    <section class="reservation-card schedule-card" aria-labelledby="schedule-title">
+      <h2 id="schedule-title"><span class="reservation-step">SCHEDULE</span> 日時・残席</h2>
+      <p class="connection-status"><span class="status-dot" aria-hidden="true"></span>デモ表示です（予約データベースには接続していません）</p>
+
+      <div class="schedule-list" aria-label="予約枠の見本">
+        <p class="schedule-list__heading">予約枠一覧 <span>※表示はサンプルです</span></p>
+        <div class="schedule-row schedule-row--head" aria-hidden="true">
+          <span>発表日時</span><span>残席</span><span>受付状況</span>
+        </div>
+        <div class="schedule-row">
+          <span>10/31(土) 10:00</span><span>8名</span><span class="availability">受付中</span>
+        </div>
+        <div class="schedule-row">
+          <span>10/31(土) 11:00</span><span>5名</span><span class="availability">受付中</span>
+        </div>
+        <div class="schedule-row">
+          <span>11/01(日) 13:00</span><span>10名</span><span class="availability">受付中</span>
+        </div>
+        <div class="schedule-row">
+          <span>11/01(日) 15:00</span><span>0名</span><span class="availability availability--full">満席</span>
+        </div>
+      </div>
+
+      <div class="reservation-notice">
+        <p>予約は原則として1人につき1件までです。重複予約は行わないでください。</p>
+        <p>予約完了メールが届かない場合は、迷惑メールフォルダやメールアドレスの入力間違いをご確認ください。</p>
+      </div>
+    </section>
+
+    <section class="reservation-card entry-card" aria-labelledby="entry-title">
+      <div class="entry-tabs" role="tablist" aria-label="予約メニュー">
+        <button class="entry-tab" id="new-tab" type="button" role="tab" aria-selected="true" aria-controls="entry-panel">新規予約</button>
+        <button class="entry-tab entry-tab--secondary" id="manage-tab" type="button" role="tab" aria-selected="false" aria-controls="entry-panel">確認・キャンセル</button>
+      </div>
+
+      <div id="entry-panel" role="tabpanel" aria-labelledby="new-tab">
+        <h2><span class="reservation-step">ENTRY</span> <span id="entry-heading">予約情報</span></h2>
+        <form class="reservation-fields" id="reservation-form">
+          <label class="form-field" for="event-slot">
+            <span>発表日時</span>
+            <select id="event-slot" name="event-slot" required>
+              <option value="">日時を選択してください</option>
+              <option value="10/31(土) 10:00">10/31(土) 10:00 — 残席 8</option>
+              <option value="10/31(土) 11:00">10/31(土) 11:00 — 残席 5</option>
+              <option value="11/01(日) 13:00">11/01(日) 13:00 — 残席 10</option>
+              <option value="11/01(日) 15:00" disabled>11/01(日) 15:00 — 満席</option>
+            </select>
+          </label>
+          <label class="form-field" for="attendee-count">
+            <span>人数</span>
+            <select id="attendee-count" name="attendee-count">
+              <option value="1">1人</option>
+              <option value="2">2人</option>
+              <option value="3">3人</option>
+              <option value="4">4人</option>
+            </select>
+          </label>
+          <label class="form-field" for="email-address">
+            <span>メールアドレス</span>
+            <input id="email-address" name="email-address" type="email" placeholder="example@example.com" autocomplete="email" required>
+          </label>
+          <label class="form-field" for="passphrase">
+            <span>あいことば</span>
+            <input id="passphrase" name="passphrase" type="password" minlength="6" maxlength="64" autocomplete="new-password" required>
+            <small id="passphrase-help">6〜64文字。予約確認・キャンセル時に同じものを使います。</small>
+          </label>
+          <button class="reservation-submit" id="reservation-submit" type="submit">注意事項を確認して予約 <span aria-hidden="true">›</span></button>
+        </form>
+        <p class="privacy-note">デモ画面です。入力内容は送信・保存されず、実際の予約・確認・キャンセルはできません。</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<dialog class="reservation-dialog" id="demo-dialog" aria-labelledby="dialog-title">
+  <form method="dialog">
+    <span class="reservation-step">DEMO PREVIEW</span>
+    <h2 id="dialog-title">これは予約画面のデモです</h2>
+    <p id="dialog-summary"></p>
+    <p class="reservation-dialog__note">入力内容は送信・保存されず、予約は確定していません。</p>
+    <button class="reservation-submit" type="submit">閉じる</button>
+  </form>
+</dialog>
+
+<footer class="site-footer">
+  <div class="inner"><strong>4D RESEARCH PROJECT</strong><br>© <span data-current-year></span> Gifu Kosen 4D.</div>
+</footer>
+<script src="./assets/js/site.js" defer></script>
+<script src="./assets/js/reservation.js" defer></script>
+</body>
+</html>
