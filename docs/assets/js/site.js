@@ -7,6 +7,25 @@ document.querySelectorAll('[data-current-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
 
+const nagataBot = document.querySelector('.nagata-bot');
+
+if (nagataBot) {
+  const botButton = nagataBot.querySelector('.nagata-bot__button');
+  const botMessage = nagataBot.querySelector('.nagata-bot__message');
+  const botLines = [
+    'こんにちは！永田BOTだよ。専門展を楽しんでいってね！',
+    '気になる発表を見つけたら、ぜひ詳しく見てね！',
+    // '！'
+  ];
+  let botLineIndex = 0;
+
+  botButton.addEventListener('click', () => {
+    botMessage.textContent = botLines[botLineIndex];
+    botMessage.hidden = false;
+    botLineIndex = (botLineIndex + 1) % botLines.length;
+  });
+}
+
 const siteViews = document.querySelector('#site-views-count');
 
 if (siteViews) {
