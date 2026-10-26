@@ -11,7 +11,7 @@ GitHub Pages の Source を `Deploy from a branch` にし、`main` ブランチ�
 - `docs/index.html` — トップ。学科紹介 / 発表内容 / 予約への入口
 - `docs/department.html` — 学科紹介の詳細
 - `docs/presentations.html` — 発表内容の詳細一覧
-- `docs/reservation.html` — 予約システムの画面イメージ（デモ。予約・残席管理は行いません）
+- `docs/reservation.html` — 旧予約画面のデモ（実際の予約には使用しません）
 - `docs/kakusi.html` — 隠しコマンドの遷移先
 - `docs/assets/css/site.css` — 共通デザイン。VIVANT参考ページの黒・濃灰・赤、英字大見出し、固定ナビ等を研究発表向けに再構成
 - `docs/assets/js/site.js` — 共通の軽量JS
@@ -37,7 +37,7 @@ PCのコマンド入力は入力欄や選択欄にフォーカスしている間
 
 ## 予約ページへのリンク
 
-初期値は以下です。
+予約ボタンは実際に使用する予約ページへ移動します。
 
 `https://gifukosen-4d-kosensai.github.io/reservation/`
 
