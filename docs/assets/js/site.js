@@ -58,7 +58,7 @@ if (nagataBot) {
       botTapTimer = window.setTimeout(() => {
         botTapCount = 0;
         botTapTimer = undefined;
-      }, 3000);
+      }, 5000);
     }
 
     botTapCount += 1;
