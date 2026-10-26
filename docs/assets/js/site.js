@@ -7,11 +7,45 @@ document.querySelectorAll('[data-current-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
 
+const secretKeyboardCommand = [
+  'ArrowUp',
+  'ArrowRight',
+  'ArrowDown',
+  'ArrowLeft',
+  '4',
+  'd',
+];
+let secretKeyboardProgress = 0;
+
+document.addEventListener('keydown', (event) => {
+  const target = event.target;
+  if (target instanceof HTMLElement && (
+    target.isContentEditable
+    || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)
+  )) {
+    secretKeyboardProgress = 0;
+    return;
+  }
+
+  const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+  if (key === secretKeyboardCommand[secretKeyboardProgress]) {
+    secretKeyboardProgress += 1;
+    if (secretKeyboardProgress === secretKeyboardCommand.length) {
+      window.location.href = './kakusi.html';
+    }
+    return;
+  }
+
+  secretKeyboardProgress = key === secretKeyboardCommand[0] ? 1 : 0;
+});
+
 const nagataBot = document.querySelector('.nagata-bot');
 
 if (nagataBot) {
   const botButton = nagataBot.querySelector('.nagata-bot__button');
   const botMessage = nagataBot.querySelector('.nagata-bot__message');
+  let botTapCount = 0;
+  let botTapTimer;
   const botLines = [
     'こんにちは！永田BOTだよ。専門展を楽しんでいってね！',
     '気になる発表を見つけたら、ぜひ詳しく見てね！',
@@ -20,6 +54,20 @@ if (nagataBot) {
   let botLineIndex = 0;
 
   botButton.addEventListener('click', () => {
+    if (botTapCount === 0) {
+      botTapTimer = window.setTimeout(() => {
+        botTapCount = 0;
+        botTapTimer = undefined;
+      }, 3000);
+    }
+
+    botTapCount += 1;
+    if (botTapCount >= 20) {
+      window.clearTimeout(botTapTimer);
+      window.location.href = './kakusi.html';
+      return;
+    }
+
     botMessage.textContent = botLines[botLineIndex];
     botMessage.hidden = false;
     botLineIndex = (botLineIndex + 1) % botLines.length;

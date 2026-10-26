@@ -12,8 +12,18 @@ GitHub Pages の Source を `Deploy from a branch` にし、`main` ブランチ�
 - `docs/department.html` — 学科紹介の詳細
 - `docs/presentations.html` — 発表内容の詳細一覧
 - `docs/reservation.html` — 予約システムの画面イメージ（デモ。予約・残席管理は行いません）
+- `docs/kakusi.html` — 隠しコマンドの遷移先
 - `docs/assets/css/site.css` — 共通デザイン。VIVANT参考ページの黒・濃灰・赤、英字大見出し、固定ナビ等を研究発表向けに再構成
 - `docs/assets/js/site.js` — 共通の軽量JS
+
+## 隠しコマンド
+
+次の操作をすると、隠しページ `docs/kakusi.html` に移動します。
+
+- PC：キーボードで `↑ → ↓ ← 4 D` の順に入力
+- スマートフォン：TOPページで最初のタップから3秒以内に永田BOTを20回連続でタップ
+
+PCのコマンド入力は入力欄や選択欄にフォーカスしている間は無効です。スマートフォン用コマンドは永田BOTがあるTOPページで使用できます。
 
 ## まず変更する場所
 
