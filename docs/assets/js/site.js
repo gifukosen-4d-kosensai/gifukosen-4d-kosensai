@@ -44,8 +44,6 @@ const nagataBot = document.querySelector('.nagata-bot');
 if (nagataBot) {
   const botButton = nagataBot.querySelector('.nagata-bot__button');
   const botMessage = nagataBot.querySelector('.nagata-bot__message');
-  let botTapCount = 0;
-  let botTapTimer;
   const botLines = [
     'こんにちは！永田BOTだよ。専門展を楽しんでいってね！',
     '気になる発表を見つけたら、ぜひ詳しく見てね！',
@@ -54,20 +52,6 @@ if (nagataBot) {
   let botLineIndex = 0;
 
   botButton.addEventListener('click', () => {
-    if (botTapCount === 0) {
-      botTapTimer = window.setTimeout(() => {
-        botTapCount = 0;
-        botTapTimer = undefined;
-      }, 3000);
-    }
-
-    botTapCount += 1;
-    if (botTapCount >= 20) {
-      window.clearTimeout(botTapTimer);
-      window.location.href = './kakusi.html';
-      return;
-    }
-
     botMessage.textContent = botLines[botLineIndex];
     botMessage.hidden = false;
     botLineIndex = (botLineIndex + 1) % botLines.length;
