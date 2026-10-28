@@ -47,11 +47,19 @@ if (nagataBot) {
   const botLines = [
     'こんにちは！永田BOTだよ。専門展を楽しんでいってね！',
     '気になる発表を見つけたら、ぜひ詳しく見てね！',
-    // '！'
   ];
   let botLineIndex = 0;
+  let botTapCount = 0;
 
   botButton.addEventListener('click', () => {
+    botTapCount += 1;
+    if (botTapCount === 20) {
+      botMessage.textContent = 'ぽこぽこちん';
+      botMessage.hidden = false;
+      botTapCount = 0;
+      return;
+    }
+
     botMessage.textContent = botLines[botLineIndex];
     botMessage.hidden = false;
     botLineIndex = (botLineIndex + 1) % botLines.length;
