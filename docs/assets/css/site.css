@@ -48,6 +48,7 @@ button, input, select, textarea { font: inherit; }
   background: #fff;
   box-shadow: 0 4px 18px rgba(0,0,0,.45);
   cursor: pointer;
+  touch-action: manipulation;
   transition: transform .2s, box-shadow .2s;
 }
 .nagata-bot__button:hover { transform: scale(1.06); box-shadow: 0 6px 22px rgba(0,0,0,.55); }
