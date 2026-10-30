@@ -1,50 +1,28 @@
 .reservation-hero {
   position: relative;
   min-height: clamp(260px, 30vw, 390px);
-  display: flex;
-  align-items: center;
   overflow: hidden;
   border-bottom: 1px solid rgba(215,23,24,.35);
-  background:
-    linear-gradient(125deg, transparent 0 42%, rgba(255,255,255,.025) 42% 43%, transparent 43%),
-    linear-gradient(125deg, transparent 0 56%, rgba(215,23,24,.22) 56% 73%, transparent 73%),
-    radial-gradient(ellipse at 72% 32%, rgba(215,23,24,.22), transparent 36%),
-    linear-gradient(110deg, #050505 0%, #141414 58%, #080808 100%);
+  background: #080808 url("../img/reservation-banner.png") center 48% / cover no-repeat;
 }
-.reservation-hero::after {
+.reservation-hero__title {
   position: absolute;
-  top: -35%;
-  right: 8%;
   width: 1px;
-  height: 170%;
-  content: '';
-  background: rgba(215,23,24,.7);
-  transform: rotate(14deg);
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
-.reservation-hero__inner {
-  position: relative;
-  z-index: 1;
-  width: min(82%, 1040px);
-  margin: 0 auto;
-}
-.reservation-eyebrow, .reservation-step {
+.reservation-step {
   color: var(--red);
   font-family: 'Antonio', sans-serif;
   letter-spacing: .1em;
   font-size: 1rem;
   font-weight: 700;
 }
-.reservation-hero h1 {
-  margin: .05rem 0 -.15rem;
-  color: #f7f7f7;
-  font-family: 'Antonio', Impact, sans-serif;
-  font-size: clamp(5rem, 13vw, 10rem);
-  font-weight: 700;
-  line-height: .95;
-  letter-spacing: -.045em;
-}
-.reservation-hero h1 span { color: var(--red); }
-.reservation-hero p { margin: .55rem 0 0; font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 900; }
 .reservation-page { min-height: 56vh; padding: clamp(2.2rem, 8vw, 6.4rem) 0; }
 .reservation-layout {
   display: grid;
@@ -184,7 +162,6 @@
 
 @media (max-width: 800px) {
   .reservation-layout { grid-template-columns: minmax(0, 1.1fr) minmax(300px, 1fr); width: 92%; }
-  .reservation-hero__inner { width: 86%; }
 }
 @media (max-width: 680px) {
   .reservation-hero { min-height: 245px; }
@@ -193,8 +170,6 @@
 }
 @media (max-width: 520px) {
   .reservation-hero { min-height: 215px; }
-  .reservation-hero h1 { font-size: clamp(4.1rem, 18vw, 6rem); }
-  .reservation-eyebrow { font-size: .75rem; }
   .reservation-layout { width: 92%; }
   .reservation-card { padding: 1rem; }
   .schedule-row { grid-template-columns: minmax(0, 1.4fr) minmax(3rem, .5fr) minmax(3.8rem, .65fr); padding-inline: .4rem; font-size: .7rem; }
